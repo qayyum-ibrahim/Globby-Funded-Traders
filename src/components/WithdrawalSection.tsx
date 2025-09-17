@@ -5,7 +5,7 @@ const WithdrawalSection = () => {
   const features = [
     {
       icon: <Banknote className="w-8 h-8" />,
-      title: "USDT Withdrawals",
+      title: "USDT/NGN Withdrawals",
       description:
         "All withdrawals are processed in USDT/NGN based on request for fast & secure transfers",
     },
