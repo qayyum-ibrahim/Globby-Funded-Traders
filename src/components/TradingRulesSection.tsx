@@ -9,9 +9,9 @@ const TradingRulesSection = () => {
       rules: [
         "Always trade with a Stop Loss",
         "Max risk: $10 (indices/crypto), $6 (forex)",
-        "Max 3 trades per day"
+        "Max 3 trades per day",
       ],
-      color: "text-primary"
+      color: "text-primary",
     },
     {
       icon: <AlertTriangle className="w-6 h-6" />,
@@ -19,9 +19,9 @@ const TradingRulesSection = () => {
       rules: [
         "No full margin trades (instant termination)",
         "Max Drawdown: 30%",
-        "Respect all position sizing rules"
+        "Respect all position sizing rules",
       ],
-      color: "text-warning"
+      color: "text-primary",
     },
     {
       icon: <Target className="w-6 h-6" />,
@@ -29,10 +29,10 @@ const TradingRulesSection = () => {
       rules: [
         "Grow $100 → $200",
         "No time limit",
-        "Consistent profitability required"
+        "Consistent profitability required",
       ],
-      color: "text-success"
-    }
+      color: "text-primary",
+    },
   ];
 
   return (
@@ -46,16 +46,18 @@ const TradingRulesSection = () => {
             Clear guidelines to ensure sustainable trading and risk management
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-3 gap-8">
           {rules.map((ruleCategory, index) => (
-            <Card 
+            <Card
               key={index}
               className="hover-lift animate-slide-up shadow-card border-0"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader className="text-center pb-4">
-                <div className={`${ruleCategory.color} mb-4 flex justify-center`}>
+                <div
+                  className={`${ruleCategory.color} mb-4 flex justify-center`}
+                >
                   {ruleCategory.icon}
                 </div>
                 <CardTitle className="text-xl font-semibold">
@@ -66,7 +68,12 @@ const TradingRulesSection = () => {
                 <ul className="space-y-3">
                   {ruleCategory.rules.map((rule, ruleIndex) => (
                     <li key={ruleIndex} className="flex items-start gap-3">
-                      <div className={`w-2 h-2 rounded-full ${ruleCategory.color.replace('text-', 'bg-')} mt-2 flex-shrink-0`}></div>
+                      <div
+                        className={`w-2 h-2 rounded-full ${ruleCategory.color.replace(
+                          "text-",
+                          "bg-"
+                        )} mt-2 flex-shrink-0`}
+                      ></div>
                       <span className="text-muted-foreground">{rule}</span>
                     </li>
                   ))}
@@ -75,7 +82,7 @@ const TradingRulesSection = () => {
             </Card>
           ))}
         </div>
-        
+
         <div className="mt-16 text-center">
           <div className="inline-block bg-card rounded-xl p-8 shadow-card">
             <div className="flex items-center justify-center gap-4 mb-4">
@@ -85,8 +92,9 @@ const TradingRulesSection = () => {
               </h3>
             </div>
             <p className="text-lg text-muted-foreground max-w-2xl">
-              Violation of any rule, especially full margin trading, will result in immediate account termination. 
-              We prioritize sustainable trading practices over quick profits.
+              Violation of any rule, especially full margin trading, will result
+              in immediate account termination. We prioritize sustainable
+              trading practices over quick profits.
             </p>
           </div>
         </div>

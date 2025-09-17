@@ -12,7 +12,7 @@ const ProcessSection = () => {
       icon: <TrendingUp className="w-8 h-8" />,
       step: "2", 
       title: "Grow Account",
-      description: "Grow $100 to $200 without exceeding $70 drawdown"
+      description: "Grow $100 to $200 without exceeding $70 drawdown, while following the firm's trading rules."
     },
     {
       icon: <Wallet className="w-8 h-8" />,
