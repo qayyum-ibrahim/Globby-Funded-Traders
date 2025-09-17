@@ -46,7 +46,7 @@ const SummarySection = () => {
               className="text-xl px-12 py-6 rounded-full bg-white text-primary hover:bg-white/95 shadow-glow border-2 border-white/20 font-bold transform hover:scale-105 transition-all duration-300"
             >
               <a 
-                href="https://chat.whatsapp.com/KibwZVlhklIE7nNLpNu2fV?mode=ems_copy_t"
+                href="https://tinyurl.com/bpa3t4pc"
                 target="_blank"
                 rel="noopener noreferrer"
               >
