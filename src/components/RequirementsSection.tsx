@@ -17,11 +17,11 @@ const RequirementsSection = () => {
       title: "Trading Capital",
       description: "Start from $100 to $500, increasing over time based on performance"
     },
-    {
-      icon: <TrendingUp className="w-8 h-8" />,
-      title: "Challenge Fee",
-      description: "Only ₦5,000 commitment fee - refundable upon successful completion"
-    }
+    // {
+    //   icon: <TrendingUp className="w-8 h-8" />,
+    //   title: "Challenge Fee",
+    //   description: "Only ₦5,000 commitment fee - refundable upon successful completion"
+    // }
   ];
 
   return (
@@ -36,7 +36,7 @@ const RequirementsSection = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {requirements.map((req, index) => (
             <div 
               key={index}
