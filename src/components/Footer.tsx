@@ -9,20 +9,21 @@ const Footer = () => {
           <h3 className="text-3xl font-bold text-foreground mb-6">
             Globby Funded Traders
           </h3>
-          
+
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Empowering skilled Nigerian traders with live capital to achieve their financial goals
+            Empowering skilled Nigerian traders with live capital to achieve
+            their financial goals
           </p>
-          
+
           <div className="mb-8">
-            <Button 
+            <Button
               asChild
-              variant="cta" 
+              variant="cta"
               size="lg"
               className="text-lg px-8 py-4"
             >
-              <a 
-                href="https://chat.whatsapp.com/KibwZVlhklIE7nNLpNu2fV?mode=ems_copy_t"
+              <a
+                href="https://tinyurl.com/bpa3t4pc"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2"
@@ -32,11 +33,9 @@ const Footer = () => {
               </a>
             </Button>
           </div>
-          
+
           <div className="border-t pt-8">
-            <p className="text-muted-foreground">
-              Good luck 📈
-            </p>
+            <p className="text-muted-foreground">Good luck 📈</p>
           </div>
         </div>
       </div>
