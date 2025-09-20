@@ -6,7 +6,7 @@ const ProcessSection = () => {
       icon: <Target className="w-8 h-8" />,
       step: "1",
       title: "Qualify & Pay",
-      description: "Pass the call → Pay ₦5,000 → Receive $100 demo account"
+      description: "Pass the call → Pay ₦10,000 → Receive $100 demo account"
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,

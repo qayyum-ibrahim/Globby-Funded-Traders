@@ -20,7 +20,7 @@ const RequirementsSection = () => {
     // {
     //   icon: <TrendingUp className="w-8 h-8" />,
     //   title: "Challenge Fee",
-    //   description: "Only ₦5,000 commitment fee - refundable upon successful completion"
+    //   description: "Only ₦10,000 commitment fee - refundable upon successful completion"
     // }
   ];
 
@@ -59,7 +59,7 @@ const RequirementsSection = () => {
         <div className="text-center mt-16">
           <div className="inline-block bg-primary/10 rounded-xl p-8 shadow-card">
             <h3 className="text-2xl font-bold text-primary mb-2">
-              Challenge Fee: ₦5,000
+              Challenge Fee: ₦10,000
             </h3>
             <p className="text-muted-foreground">
               Commitment fee only - shows you're serious about trading
