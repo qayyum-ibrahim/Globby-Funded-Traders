@@ -65,18 +65,18 @@ const WithdrawalSection = () => {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="animate-fade-in">
             <h3 className="text-3xl font-bold text-foreground mb-6">
-              Profit Split: 70/30
+              Profit Split: 60/40
             </h3>
             <div className="space-y-4">
               <div className="flex items-center justify-between p-4 bg-success/10 rounded-lg">
                 <span className="font-semibold text-foreground">You Keep</span>
-                <span className="text-2xl font-bold text-success">70%</span>
+                <span className="text-2xl font-bold text-success">60%</span>
               </div>
               <div className="flex items-center justify-between p-4 bg-primary/10 rounded-lg">
                 <span className="font-semibold text-foreground">
                   The Firm Takes
                 </span>
-                <span className="text-2xl font-bold text-primary">30%</span>
+                <span className="text-2xl font-bold text-primary">40%</span>
               </div>
             </div>
           </div>
@@ -100,9 +100,9 @@ const WithdrawalSection = () => {
                   </div>
                   <div className="border-t pt-4">
                     <div className="text-sm text-muted-foreground">
-                      Your Share (70%)
+                      Your Share (60%)
                     </div>
-                    <div className="text-3xl font-bold text-success">$350</div>
+                    <div className="text-3xl font-bold text-success">$300</div>
                   </div>
                   <div className="text-xs text-muted-foreground">
                     Withdraw anytime, no restrictions

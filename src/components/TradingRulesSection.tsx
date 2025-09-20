@@ -10,6 +10,7 @@ const TradingRulesSection = () => {
         "Always trade with a Stop Loss",
         "Max risk: $10 (indices/crypto), $6 (forex)",
         "Max 3 trades per day",
+        "Maximum of 3 open positions at a time",
       ],
       color: "text-primary",
     },
@@ -20,6 +21,7 @@ const TradingRulesSection = () => {
         "No full margin trades (instant termination)",
         "Max Drawdown: 30%",
         "Respect all position sizing rules",
+        "No hedging",
       ],
       color: "text-primary",
     },
@@ -91,10 +93,13 @@ const TradingRulesSection = () => {
                 Key Reminder
               </h3>
             </div>
-            <p className="text-lg text-muted-foreground max-w-2xl">
+            <p className="text-lg text-muted-foreground max-w-2xl mb-4">
               Violation of any rule, especially full margin trading, will result
               in immediate account termination. We prioritize sustainable
               trading practices over quick profits.
+            </p>
+            <p className="text-sm text-muted-foreground italic">
+              All rules are subjected to change over time.
             </p>
           </div>
         </div>
