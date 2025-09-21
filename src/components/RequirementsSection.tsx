@@ -15,7 +15,7 @@ const RequirementsSection = () => {
     {
       icon: <DollarSign className="w-8 h-8" />,
       title: "Trading Capital",
-      description: "Start from $100 to $500, increasing over time based on performance"
+      description: "Start from $100 to $2,000, increasing over time based on performance"
     },
     // {
     //   icon: <TrendingUp className="w-8 h-8" />,
