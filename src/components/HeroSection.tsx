@@ -28,6 +28,9 @@ const HeroSection = () => {
           </p>
 
           <div className="animate-scale-in">
+            <p className="text-lg mb-4 opacity-80">
+              Globby Funded Traders is currently invite only.
+            </p>
             <Button
               asChild
               variant="secondary"
@@ -42,6 +45,7 @@ const HeroSection = () => {
                 Apply Now
               </a>
             </Button>
+            <p className="text-lg mt-4 opacity-80">Join the Waitlist</p>
           </div>
         </div>
       </div>

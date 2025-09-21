@@ -15,12 +15,15 @@ const Footer = () => {
             their financial goals
           </p>
 
-          <div className="mb-8">
+          <div className="animate-scale-in mb-8">
+            <p className="text-lg text-muted-foreground mb-4">
+              Globby Funded Traders is currently invite only.
+            </p>
             <Button
               asChild
               variant="cta"
               size="lg"
-              className="text-lg px-8 py-4"
+              className="text-lg px-8 py-4 transform hover:scale-105 transition-all duration-300"
             >
               <a
                 href="https://tinyurl.com/bpa3t4pc"
@@ -32,6 +35,9 @@ const Footer = () => {
                 Apply Now
               </a>
             </Button>
+            <p className="text-lg text-muted-foreground mt-4">
+              Join the Waitlist
+            </p>
           </div>
 
           <div className="border-t pt-8">
