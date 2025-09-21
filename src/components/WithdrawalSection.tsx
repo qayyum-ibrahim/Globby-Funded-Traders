@@ -95,7 +95,7 @@ const WithdrawalSection = () => {
                       Monthly Profit
                     </div>
                     <div className="text-2xl font-bold text-foreground">
-                      $500
+                      $2,000
                     </div>
                   </div>
                   <div className="border-t pt-4">
