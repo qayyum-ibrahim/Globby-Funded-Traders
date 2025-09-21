@@ -24,7 +24,7 @@ const ProcessSection = () => {
       icon: <BarChart3 className="w-8 h-8" />,
       step: "4",
       title: "Profit & Scale",
-      description: "Make profits, withdraw instantly (60/40 split), scale up to $500"
+      description: "Make profits, withdraw instantly (60/40 split), scale up to $2,000"
     }
   ];
 
