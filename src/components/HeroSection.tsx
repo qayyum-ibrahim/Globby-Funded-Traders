@@ -38,7 +38,7 @@ const HeroSection = () => {
               className="text-xl px-12 py-6 rounded-full bg-white text-primary hover:bg-white/95 shadow-glow border-2 border-white/20 font-bold transform hover:scale-105 transition-all duration-300"
             >
               <a
-                href="https://tinyurl.com/bpa3t4pc"
+                href="https://discord.gg/v9ZPtkZ2pt"
                 target="_blank"
                 rel="noopener noreferrer"
               >

@@ -26,7 +26,7 @@ const Footer = () => {
               className="text-lg px-8 py-4 transform hover:scale-105 transition-all duration-300"
             >
               <a
-                href="https://tinyurl.com/bpa3t4pc"
+                href="https://discord.gg/v9ZPtkZ2pt"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2"

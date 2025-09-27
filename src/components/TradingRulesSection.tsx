@@ -8,8 +8,8 @@ const TradingRulesSection = () => {
       category: "Risk Management",
       rules: [
         "Always trade with a Stop Loss",
-        "Max risk: $10 (indices/crypto), $6 (forex)",
-        "Max 3 trades per day",
+        "Max Risk Per Trade: 10% of Initial Account Balance",
+        "Trade Responsibly",
         "Maximum of 3 open positions at a time",
       ],
       color: "text-primary",
