@@ -17,11 +17,11 @@ const TradingRulesSection = () => {
       icon: <AlertTriangle className="w-6 h-6" />,
       category: "Strict Rules",
       rules: [
-        "No full margin trades (instant termination)",
-        "Max Drawdown: 30% of initial account balance",
-        "Daily Limit: 15% of initial account balance",
-        "Respect all position sizing rules",
-        "No hedging",
+        "No Full Margin Trades (instant termination)",
+        "Max Drawdown: 30% of Initial Account Balance",
+        "Daily Limit: 15% of Initial Account Balance",
+        "Respect all Position Sizing Rules",
+        "No Hedging",
       ],
       color: "text-primary",
     },
@@ -76,7 +76,9 @@ const TradingRulesSection = () => {
                           "bg-"
                         )} mt-2 flex-shrink-0`}
                       ></div>
-                      <span className="text-muted-foreground">{rule}</span>
+                      <span className="text-muted-foreground capitalize">
+                        {rule}
+                      </span>
                     </li>
                   ))}
                 </ul>
