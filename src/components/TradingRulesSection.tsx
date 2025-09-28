@@ -9,7 +9,6 @@ const TradingRulesSection = () => {
       rules: [
         "Always trade with a Stop Loss",
         "Max Risk Per Trade: 10% of Initial Account Balance",
-        "Trade Responsibly",
         "Maximum of 3 open positions at a time",
       ],
       color: "text-primary",
@@ -19,7 +18,8 @@ const TradingRulesSection = () => {
       category: "Strict Rules",
       rules: [
         "No full margin trades (instant termination)",
-        "Max Drawdown: 30%",
+        "Max Drawdown: 30% of initial account balance",
+        "Daily Limit: 15% of initial account balance",
         "Respect all position sizing rules",
         "No hedging",
       ],
