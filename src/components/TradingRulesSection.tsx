@@ -8,7 +8,7 @@ const TradingRulesSection = () => {
       category: "Risk Management",
       rules: [
         "Always trade with a Stop Loss",
-        "Max Risk Per Trade: 10% of Initial Account Balance",
+        "Max Risk Per Trade: 5% of Initial Account Balance",
         "Maximum of 3 open positions at a time",
       ],
       color: "text-primary",
