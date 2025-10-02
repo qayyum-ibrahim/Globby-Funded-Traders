@@ -53,12 +53,9 @@ const getValidationSchema = (emailType: EmailType | "") => {
     case "funded_login":
       return Yup.object().shape({
         ...baseSchema,
-        email: Yup.string()
-          .required("Login email is required")
-          .email("Invalid email format"),
-        password: Yup.string()
-          .required("Password is required")
-          .min(8, "Password must be at least 8 characters"),
+        login: Yup.string().required("Login is required"),
+        server: Yup.string().required("Server is required"),
+        password: Yup.string().required("Password is required"),
       });
     case "challenge_passed":
       return Yup.object().shape({
@@ -83,8 +80,10 @@ const SendEmail = () => {
         emails: emailArray,
         emailType: values.emailType,
         reason: values.reason,
-        email: values.email,
+        login: values.login,
+        server: values.server,
         password: values.password,
+        email: values.email,
       },
       {
         onSuccess: () => {
@@ -119,8 +118,10 @@ const SendEmail = () => {
                 emails: "",
                 emailType: "" as EmailType,
                 reason: "",
-                email: "",
+                login: "",
+                server: "",
                 password: "",
+                email: "",
               }}
               validationSchema={getValidationSchema("")}
               onSubmit={handleSubmit}
@@ -152,8 +153,10 @@ const SendEmail = () => {
                         setFieldValue("emailType", value);
                         // Reset dynamic fields when type changes
                         setFieldValue("reason", "");
-                        setFieldValue("email", "");
+                        setFieldValue("login", "");
+                        setFieldValue("server", "");
                         setFieldValue("password", "");
+                        setFieldValue("email", "");
                       }}
                     >
                       <SelectTrigger>
@@ -197,17 +200,32 @@ const SendEmail = () => {
                     values.emailType === "funded_login") && (
                     <>
                       <div className="space-y-2">
-                        <Label htmlFor="email">Login Email</Label>
+                        <Label htmlFor="login">Login</Label>
                         <Field
                           as={Input}
-                          id="email"
-                          name="email"
-                          type="email"
-                          placeholder="user@example.com"
+                          id="login"
+                          name="login"
+                          type="text"
+                          placeholder="211478722"
                         />
-                        {errors.email && touched.email && (
+                        {errors.login && touched.login && (
                           <p className="text-sm text-destructive">
-                            {errors.email}
+                            {errors.login}
+                          </p>
+                        )}
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="server">Server</Label>
+                        <Field
+                          as={Input}
+                          id="server"
+                          name="server"
+                          type="text"
+                          placeholder="Exness-MT5Trial9"
+                        />
+                        {errors.server && touched.server && (
+                          <p className="text-sm text-destructive">
+                            {errors.server}
                           </p>
                         )}
                       </div>

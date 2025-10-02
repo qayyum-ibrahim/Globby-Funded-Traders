@@ -8,16 +8,20 @@ export interface EmailFormData {
   emails: string;
   emailType: EmailType;
   reason?: string;
-  email?: string;
+  login?: string;
+  server?: string;
   password?: string;
+  email?: string;
 }
 
 export interface SendEmailRequest {
   emails: string[];
   emailType: EmailType;
   reason?: string;
-  email?: string;
+  login?: string;
+  server?: string;
   password?: string;
+  email?: string;
 }
 
 export interface SendEmailResponse {

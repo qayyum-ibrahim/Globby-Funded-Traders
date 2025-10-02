@@ -205,7 +205,11 @@ const accountSuspendedTemplate = (reason: string) => `
 </html>
 `;
 
-const evaluationLoginTemplate = (email: string, password: string) => `
+const evaluationLoginTemplate = (
+  login: string,
+  server: string,
+  password: string
+) => `
 <!DOCTYPE html>
 <html>
 <head>
@@ -227,12 +231,13 @@ const evaluationLoginTemplate = (email: string, password: string) => `
         Welcome to your trading evaluation journey! We're excited to have you on board.
       </p>
       
-      <p class="message-text">
-        Your evaluation account is now active and ready for trading. Below are your login credentials to your evaluation MT5 account:
+    <p class="message-text">
+        Your evaluation account is now active and ready for trading. Below are your login credentials to access your trading platform:
       </p>
       
       <div class="credentials">
-        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Login:</strong> ${login}</p>
+        <p><strong>Server:</strong> ${server}</p>
         <p><strong>Password:</strong> ${password}</p>
       </div>
       
@@ -257,7 +262,11 @@ const evaluationLoginTemplate = (email: string, password: string) => `
 </html>
 `;
 
-const fundedLoginTemplate = (email: string, password: string) => `
+const fundedLoginTemplate = (
+  login: string,
+  server: string,
+  password: string
+) => `
 <!DOCTYPE html>
 <html>
 <head>
@@ -279,12 +288,13 @@ const fundedLoginTemplate = (email: string, password: string) => `
         <strong>Congratulations!</strong> 🎉 You've successfully passed your evaluation and we're thrilled to welcome you as a funded trader.
       </p>
       
-      <p class="message-text">
-        Your funded trading account is now active and ready. Below are your login credentials to access your funded MT5 account:
+       <p class="message-text">
+        Your funded trading account is now active and ready. Below are your login credentials to access your funded trading platform:
       </p>
       
       <div class="credentials">
-        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Login:</strong> ${login}</p>
+        <p><strong>Server:</strong> ${server}</p>
         <p><strong>Password:</strong> ${password}</p>
       </div>
       
@@ -376,9 +386,17 @@ export const generateEmailTemplate = (data: SendEmailRequest): string => {
     case "account_suspended":
       return accountSuspendedTemplate(data.reason || "");
     case "evaluation_login":
-      return evaluationLoginTemplate(data.email || "", data.password || "");
+      return evaluationLoginTemplate(
+        data.login || "",
+        data.server || "",
+        data.password || ""
+      );
     case "funded_login":
-      return fundedLoginTemplate(data.email || "", data.password || "");
+      return fundedLoginTemplate(
+        data.login || "",
+        data.server || "",
+        data.password || ""
+      );
     case "challenge_passed":
       return challengePassedTemplate(data.email || "");
     default:
