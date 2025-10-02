@@ -23,7 +23,7 @@ import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
 const emailTypes = [
-  { value: "account_breached", label: "Account Breached Email" },
+  { value: "account_suspended", label: "Account Suspended Email" },
   { value: "evaluation_login", label: "Evaluation Login Details Email" },
   { value: "funded_login", label: "Funded Login Details Email" },
   { value: "challenge_passed", label: "Challenge Passed Email" },
@@ -42,7 +42,7 @@ const getValidationSchema = (emailType: EmailType | "") => {
   };
 
   switch (emailType) {
-    case "account_breached":
+    case "account_suspended":
       return Yup.object().shape({
         ...baseSchema,
         reason: Yup.string()
@@ -175,7 +175,7 @@ const SendEmail = () => {
                   </div>
 
                   {/* Dynamic fields based on email type */}
-                  {values.emailType === "account_breached" && (
+                  {values.emailType === "account_suspended" && (
                     <div className="space-y-2">
                       <Label htmlFor="reason">Reason</Label>
                       <Field

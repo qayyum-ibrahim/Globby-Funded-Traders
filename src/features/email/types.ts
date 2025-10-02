@@ -1,5 +1,5 @@
 export type EmailType =
-  | "account_breached"
+  | "account_suspended"
   | "evaluation_login"
   | "funded_login"
   | "challenge_passed";

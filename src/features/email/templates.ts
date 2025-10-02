@@ -6,117 +6,170 @@ const baseStyles = `
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     background-color: #f5f5f5;
+    color: #333333;
   }
   .container {
     max-width: 600px;
     margin: 40px auto;
     background-color: #ffffff;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
   .header {
     background-color: #0000FF;
     color: #ffffff;
-    padding: 40px 20px;
+    padding: 32px 24px;
     text-align: center;
   }
   .header h1 {
     margin: 0;
-    font-size: 28px;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
   }
   .content {
-    padding: 40px 20px;
+    padding: 32px 24px;
+    line-height: 1.6;
+    color: #333333;
   }
-  .credentials-card {
+  .greeting {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .message-text {
+    font-size: 15px;
+    margin: 16px 0;
+    color: #444444;
+  }
+  .highlight {
+    color: #0000FF;
+    font-weight: 600;
+  }
+  .credentials {
     background-color: #f8f9fa;
     border: 2px solid #0000FF;
     border-radius: 8px;
-    padding: 24px;
+    padding: 20px;
     margin: 24px 0;
-  }
-  .credential-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 0;
-    border-bottom: 1px solid #e9ecef;
-  }
-  .credential-row:last-child {
-    border-bottom: none;
-  }
-  .credential-label {
-    font-weight: 600;
-    color: #495057;
-  }
-  .credential-value {
     font-family: 'Courier New', monospace;
+  }
+  .credentials p {
+    margin: 8px 0;
+    font-size: 14px;
+  }
+  .credentials strong {
     color: #0000FF;
-    font-size: 16px;
+    font-size: 15px;
   }
-  .alert-box {
+  .warning-box {
     background-color: #fff3cd;
-    border-left: 4px solid #ffc107;
+    border-left: 4px solid #0000FF;
     padding: 16px;
     margin: 24px 0;
     border-radius: 4px;
+    color: #856404;
   }
-  .success-box {
-    background-color: #d4edda;
-    border-left: 4px solid #28a745;
+  .success-highlight {
+    background-color: #e7f3ff;
+    border-left: 4px solid #0000FF;
     padding: 16px;
     margin: 24px 0;
     border-radius: 4px;
+    color: #004085;
   }
-  .button {
-    display: inline-block;
-    background-color: #0000FF;
-    color: #ffffff;
-    padding: 12px 32px;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 600;
-    margin: 16px 0;
+  .signature {
+    margin-top: 32px;
+    font-size: 15px;
+    color: #555555;
   }
   .footer {
     background-color: #f8f9fa;
     padding: 24px;
     text-align: center;
     color: #6c757d;
-    font-size: 14px;
+    font-size: 13px;
+    border-top: 1px solid #e9ecef;
+  }
+  
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #1a1a1a;
+      color: #e0e0e0;
+    }
+    .container {
+      background-color: #2d2d2d;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+    .content {
+      color: #e0e0e0;
+    }
+    .message-text {
+      color: #d0d0d0;
+    }
+    .credentials {
+      background-color: #1a1a1a;
+      border-color: #0000FF;
+    }
+    .warning-box {
+     background-color: #3d0c0c;
+color: #ff0000;
+    }
+    .success-highlight {
+      background-color: #1a2d3d;
+      color: #66b3ff;
+    }
+    .signature {
+      color: #b0b0b0;
+    }
+    .footer {
+      background-color: #1a1a1a;
+      border-top-color: #404040;
+      color: #888888;
+    }
   }
 `;
 
-const accountBreachedTemplate = (reason: string) => `
+const accountSuspendedTemplate = (reason: string) => `
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
   <style>${baseStyles}</style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h1>⚠️ Account Breached</h1>
+      <h1>Globby Funded Traders</h1>
     </div>
     <div class="content">
-      <h2>Security Alert</h2>
-      <p>We have detected a breach in your account. Your account has been temporarily suspended for security reasons.</p>
+      <p class="greeting">Dear Trader,</p>
       
-      <div class="alert-box">
-        <strong>Reason for breach:</strong>
-        <p style="margin: 8px 0 0 0;">${reason}</p>
+      <p class="message-text">
+        Upon careful review of your trading activities and account, you have been found to violate the rule of <span class="highlight">${reason}</span>.
+      </p>
+      
+      <div class="warning-box">
+        <strong>This has led to your ACCOUNT BEING SUSPENDED.</strong>
       </div>
       
-      <p>Please contact our support team immediately to resolve this issue and restore access to your account.</p>
-      
-      <a href="#" class="button">Contact Support</a>
-      
-      <p style="margin-top: 24px; color: #6c757d; font-size: 14px;">
-        If you believe this is an error, please reach out to us as soon as possible.
+      <p class="message-text">
+        You're welcome to take the challenge again as you try to adhere to the rules and exercise discipline next time.
       </p>
+      
+      <p class="message-text">
+        You can message our <a href="https://discord.gg/v9ZPtkZ2pt">support team on Discord</a> for further enquiries.
+      </p>
+      
+      <div class="signature">
+        <p>Best regards,</p>
+        <p><strong>Globby Funded Traders Team</strong></p>
+      </div>
     </div>
     <div class="footer">
       <p>© 2025 Globby Funded Traders. All rights reserved.</p>
@@ -132,35 +185,43 @@ const evaluationLoginTemplate = (email: string, password: string) => `
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
   <style>${baseStyles}</style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h1>🎯 Evaluation Account Ready</h1>
+      <h1>Globby Funded Traders</h1>
     </div>
     <div class="content">
-      <h2>Your Evaluation Has Begun!</h2>
-      <p>Welcome to your trading evaluation. Below are your login credentials to access your evaluation account.</p>
+      <p class="greeting">Hello Trader,</p>
       
-      <div class="credentials-card">
-        <div class="credential-row">
-          <span class="credential-label">Email:</span>
-          <span class="credential-value">${email}</span>
-        </div>
-        <div class="credential-row">
-          <span class="credential-label">Password:</span>
-          <span class="credential-value">${password}</span>
-        </div>
+      <p class="message-text">
+        Welcome to your trading evaluation journey! We're excited to have you on board.
+      </p>
+      
+      <p class="message-text">
+        Your evaluation account is now active and ready for trading. Below are your login credentials to access your dashboard:
+      </p>
+      
+      <div class="credentials">
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Password:</strong> ${password}</p>
       </div>
       
-      <p><strong>Important:</strong> Please keep these credentials secure and do not share them with anyone.</p>
-      
-      <a href="#" class="button">Login to Dashboard</a>
-      
-      <p style="margin-top: 24px; color: #6c757d; font-size: 14px;">
-        Good luck with your evaluation! Trade responsibly and follow the rules.
+      <p class="message-text">
+        Please keep these credentials secure and do not share them with anyone. We recommend changing your password after your first login.
       </p>
+      
+      <p class="message-text">
+        Good luck with your evaluation! Trade responsibly, follow the rules, and show us your skills.
+      </p>
+      
+      <div class="signature">
+        <p>Best regards,</p>
+        <p><strong>Globby Funded Traders Team</strong></p>
+      </div>
     </div>
     <div class="footer">
       <p>© 2025 Globby Funded Traders. All rights reserved.</p>
@@ -176,35 +237,47 @@ const fundedLoginTemplate = (email: string, password: string) => `
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
   <style>${baseStyles}</style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h1>🎉 Funded Account Activated</h1>
+      <h1>Globby Funded Traders</h1>
     </div>
     <div class="content">
-      <h2>Congratulations, You're Funded!</h2>
-      <p>Your funded trading account is now active. Below are your login credentials to access your funded account.</p>
+      <p class="greeting">Dear Funded Trader,</p>
       
-      <div class="credentials-card">
-        <div class="credential-row">
-          <span class="credential-label">Email:</span>
-          <span class="credential-value">${email}</span>
-        </div>
-        <div class="credential-row">
-          <span class="credential-label">Password:</span>
-          <span class="credential-value">${password}</span>
-        </div>
+      <p class="message-text">
+        <strong>Congratulations!</strong> 🎉 You've successfully passed your evaluation and we're thrilled to welcome you as a funded trader.
+      </p>
+      
+      <p class="message-text">
+        Your funded trading account is now active and ready. Below are your login credentials to access your funded account dashboard:
+      </p>
+      
+      <div class="credentials">
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Password:</strong> ${password}</p>
       </div>
       
-      <p><strong>You're now trading with real capital!</strong> Continue following the rules and manage your risk carefully.</p>
+      <div class="success-highlight">
+        <p style="margin: 0;"><strong>You're now trading with REAL CAPITAL!</strong></p>
+      </div>
       
-      <a href="#" class="button">Access Funded Account</a>
-      
-      <p style="margin-top: 24px; color: #6c757d; font-size: 14px;">
-        Remember to withdraw your profits regularly and trade within the guidelines.
+      <p class="message-text">
+        Continue following the rules, manage your risk carefully, and remember to withdraw your profits regularly. Trade within the guidelines and maintain the discipline that got you here.
       </p>
+      
+      <p class="message-text">
+        We're excited to see your continued success!
+      </p>
+      
+      <div class="signature">
+        <p>Best regards,</p>
+        <p><strong>Globby Funded Traders Team</strong></p>
+      </div>
     </div>
     <div class="footer">
       <p>© 2025 Globby Funded Traders. All rights reserved.</p>
@@ -220,30 +293,49 @@ const challengePassedTemplate = (email: string) => `
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
   <style>${baseStyles}</style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h1>🏆 Challenge Passed!</h1>
+      <h1>Globby Funded Traders</h1>
     </div>
     <div class="content">
-      <h2>Congratulations!</h2>
-      <p>We're excited to inform you that you have successfully passed your trading challenge!</p>
+      <p class="greeting">Dear Trader,</p>
       
-      <div class="success-box">
-        <p style="margin: 0;"><strong>Account Email:</strong> ${email}</p>
+      <p class="message-text">
+        <strong>Congratulations!</strong> 🏆 We're thrilled to inform you that you have successfully passed your trading challenge!
+      </p>
+      
+      <div class="success-highlight">
+        <p style="margin: 0;"><strong>Challenge Account:</strong> ${email}</p>
       </div>
       
-      <p>You've demonstrated excellent trading skills and discipline. Your funded account will be activated within 24-48 hours.</p>
-      
-      <p>Our team will review your performance and send you the credentials for your funded account shortly.</p>
-      
-      <a href="#" class="button">View Results</a>
-      
-      <p style="margin-top: 24px; color: #6c757d; font-size: 14px;">
-        Keep an eye on your inbox for your funded account details!
+      <p class="message-text">
+        You've demonstrated excellent trading skills, discipline, and risk management throughout the evaluation. This is a significant achievement and we're impressed with your performance.
       </p>
+      
+      <p class="message-text">
+        <strong>Next Steps:</strong>
+      </p>
+      
+      <p class="message-text">
+        • Your funded account will be activated within 24-48 hours<br>
+        • Our team will review your final performance metrics<br>
+        • You'll receive your funded account credentials via email shortly<br>
+        • Keep an eye on your inbox for further instructions
+      </p>
+      
+      <p class="message-text">
+        If you have any questions, feel free to reach out to our <a href="https://discord.gg/v9ZPtkZ2pt">support team on Discord</a>.
+      </p>
+      
+      <div class="signature">
+        <p>Congratulations once again!</p>
+        <p><strong>Globby Funded Traders Team</strong></p>
+      </div>
     </div>
     <div class="footer">
       <p>© 2025 Globby Funded Traders. All rights reserved.</p>
@@ -255,8 +347,8 @@ const challengePassedTemplate = (email: string) => `
 
 export const generateEmailTemplate = (data: SendEmailRequest): string => {
   switch (data.emailType) {
-    case "account_breached":
-      return accountBreachedTemplate(data.reason || "");
+    case "account_suspended":
+      return accountSuspendedTemplate(data.reason || "");
     case "evaluation_login":
       return evaluationLoginTemplate(data.email || "", data.password || "");
     case "funded_login":
