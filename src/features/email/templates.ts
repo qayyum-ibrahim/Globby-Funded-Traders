@@ -228,7 +228,7 @@ const evaluationLoginTemplate = (email: string, password: string) => `
       </p>
       
       <p class="message-text">
-        Your evaluation account is now active and ready for trading. Below are your login credentials to access your dashboard:
+        Your evaluation account is now active and ready for trading. Below are your login credentials to your evaluation MT5 account:
       </p>
       
       <div class="credentials">
@@ -280,7 +280,7 @@ const fundedLoginTemplate = (email: string, password: string) => `
       </p>
       
       <p class="message-text">
-        Your funded trading account is now active and ready. Below are your login credentials to access your funded account dashboard:
+        Your funded trading account is now active and ready. Below are your login credentials to access your funded MT5 account:
       </p>
       
       <div class="credentials">
