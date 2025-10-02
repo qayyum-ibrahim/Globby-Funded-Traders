@@ -79,6 +79,23 @@ const baseStyles = `
     border-radius: 4px;
     color: #004085;
   }
+    .success-box {
+  background-color: #d4edda;          /* light green background */
+  border-left: 4px solid #28a745;     /* strong green border */
+  padding: 16px;
+  margin: 24px 0;
+  border-radius: 4px;
+  color: #155724;                     /* dark green text */
+}
+
+.danger-box {
+  background-color: #f8d7da;          /* light red background */
+  border-left: 4px solid #dc3545;     /* strong red border */
+  padding: 16px;
+  margin: 24px 0;
+  border-radius: 4px;
+  color: #721c24;                     /* dark red text */
+}
   .signature {
     margin-top: 32px;
     font-size: 15px;
@@ -114,13 +131,22 @@ const baseStyles = `
       border-color: #0000FF;
     }
     .warning-box {
-     background-color: #3d0c0c;
-color: #ff0000;
+      background-color: #3d3520;
+      color: #ffd966;
     }
     .success-highlight {
       background-color: #1a2d3d;
       color: #66b3ff;
     }
+      .success-box {
+  background-color: #1d3d2d; /* deep green background */
+  color: #66ff99;            /* bright green text */
+}
+
+.danger-box {
+  background-color: #3d1a1a; /* deep red background */
+  color: #ff6666;            /* bright red text */
+}
     .signature {
       color: #b0b0b0;
     }
@@ -154,7 +180,7 @@ const accountSuspendedTemplate = (reason: string) => `
         Upon careful review of your trading activities and account, you have been found to violate the rule of <span class="highlight">${reason}</span>.
       </p>
       
-      <div class="warning-box">
+      <div class="danger-box">
         <strong>This has led to your ACCOUNT BEING SUSPENDED.</strong>
       </div>
       
@@ -262,7 +288,7 @@ const fundedLoginTemplate = (email: string, password: string) => `
         <p><strong>Password:</strong> ${password}</p>
       </div>
       
-      <div class="success-highlight">
+      <div class="success-box">
         <p style="margin: 0;"><strong>You're now trading with REAL CAPITAL!</strong></p>
       </div>
       
