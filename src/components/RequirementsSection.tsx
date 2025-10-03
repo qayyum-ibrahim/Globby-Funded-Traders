@@ -1,21 +1,24 @@
-import { CheckCircle, Phone, DollarSign, TrendingUp } from "lucide-react";
+import { CheckCircle, DollarSign, Mail } from "lucide-react";
 
 const RequirementsSection = () => {
   const requirements = [
     {
-      icon: <Phone className="w-8 h-8" />,
-      title: "One-on-One Call",
-      description: "Must explain trading plan, strategy, risk management, and experience clearly"
+      icon: <Mail className="w-8 h-8" />,
+      title: "Message Support",
+      description:
+        "Click on the Apply Now button and message support to indicate you are interested in the funded program.",
     },
     {
       icon: <CheckCircle className="w-8 h-8" />,
       title: "Proven Profitability",
-      description: "We only work with profitable traders - we don't make money from challenge fees"
+      description:
+        "We only work with profitable traders - we don't make money from challenge fees",
     },
     {
       icon: <DollarSign className="w-8 h-8" />,
       title: "Trading Capital",
-      description: "Start from $100 to $2,000, increasing over time based on performance"
+      description:
+        "Start from $100 to $2,000, increasing over time based on performance",
     },
     // {
     //   icon: <TrendingUp className="w-8 h-8" />,
@@ -32,13 +35,14 @@ const RequirementsSection = () => {
             How to Get Funded
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We maintain strict standards to ensure we partner with serious, skilled traders
+            We maintain strict standards to ensure we partner with serious,
+            skilled traders
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {requirements.map((req, index) => (
-            <div 
+            <div
               key={index}
               className="bg-card p-8 rounded-xl shadow-card hover-lift animate-slide-up text-center"
               style={{ animationDelay: `${index * 0.1}s` }}
@@ -55,7 +59,7 @@ const RequirementsSection = () => {
             </div>
           ))}
         </div>
-        
+
         <div className="text-center mt-16">
           <div className="inline-block bg-primary/10 rounded-xl p-8 shadow-card">
             <h3 className="text-2xl font-bold text-primary mb-2">

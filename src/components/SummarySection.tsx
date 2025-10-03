@@ -65,6 +65,7 @@ const SummarySection = () => {
                 Apply Now & Get Funded
               </a>
             </Button>
+            <p className="text-lg mt-4 opacity-80">Message Support</p>
           </div>
         </div>
       </div>
