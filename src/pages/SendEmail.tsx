@@ -27,6 +27,7 @@ const emailTypes = [
   { value: "evaluation_login", label: "Evaluation Login Details Email" },
   { value: "funded_login", label: "Funded Login Details Email" },
   { value: "challenge_passed", label: "Challenge Passed Email" },
+  { value: "withdrawal", label: "Withdrawal Email" },
 ] as const;
 
 const getValidationSchema = (emailType: EmailType | "") => {
@@ -64,6 +65,12 @@ const getValidationSchema = (emailType: EmailType | "") => {
           .required("User email is required")
           .email("Invalid email format"),
       });
+    case "withdrawal":
+      return Yup.object().shape({
+        ...baseSchema,
+        usd: Yup.string().required("USD amount is required"),
+        ngn: Yup.string().required("NGN amount is required"),
+      });
     default:
       return Yup.object().shape(baseSchema);
   }
@@ -84,6 +91,8 @@ const SendEmail = () => {
         server: values.server,
         password: values.password,
         email: values.email,
+        usd: values.usd,
+        ngn: values.ngn,
       },
       {
         onSuccess: () => {
@@ -122,6 +131,8 @@ const SendEmail = () => {
                 server: "",
                 password: "",
                 email: "",
+                usd: "",
+                ngn: "",
               }}
               validationSchema={getValidationSchema("")}
               onSubmit={handleSubmit}
@@ -157,6 +168,8 @@ const SendEmail = () => {
                         setFieldValue("server", "");
                         setFieldValue("password", "");
                         setFieldValue("email", "");
+                        setFieldValue("usd", "");
+                        setFieldValue("ngn", "");
                       }}
                     >
                       <SelectTrigger>
@@ -263,6 +276,40 @@ const SendEmail = () => {
                         </p>
                       )}
                     </div>
+                  )}
+                  {values.emailType === "withdrawal" && (
+                    <>
+                      <div className="space-y-2">
+                        <Label htmlFor="usd">Amount in USD</Label>
+                        <Field
+                          as={Input}
+                          id="usd"
+                          name="usd"
+                          type="text"
+                          placeholder="100.00"
+                        />
+                        {errors.usd && touched.usd && (
+                          <p className="text-sm text-destructive">
+                            {errors.usd}
+                          </p>
+                        )}
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="ngn">Amount in NGN</Label>
+                        <Field
+                          as={Input}
+                          id="ngn"
+                          name="ngn"
+                          type="text"
+                          placeholder="150,000.00"
+                        />
+                        {errors.ngn && touched.ngn && (
+                          <p className="text-sm text-destructive">
+                            {errors.ngn}
+                          </p>
+                        )}
+                      </div>
+                    </>
                   )}
 
                   <Button

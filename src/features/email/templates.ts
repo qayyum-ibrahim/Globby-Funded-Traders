@@ -381,6 +381,66 @@ const challengePassedTemplate = (email: string) => `
 </html>
 `;
 
+const withdrawalTemplate = (usd: string, ngn: string) => `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
+  <style>${baseStyles}</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Globby Funded Traders</h1>
+    </div>
+    <div class="content">
+      <p class="greeting">Dear Trader,</p>
+      
+      <p class="message-text">
+        Great news! Your withdrawal request has been processed successfully.
+      </p>
+      
+      <div class="success-highlight">
+        <p style="margin: 0;"><strong>Withdrawal Confirmed</strong></p>
+      </div>
+      
+      <p class="message-text">
+        Below are the details of your withdrawal:
+      </p>
+      
+      <div class="credentials">
+        <p><strong>Amount (USD):</strong> $${Number(usd).toLocaleString()}</p>
+        <p><strong>Amount (NGN):</strong> ₦${Number(ngn).toLocaleString()}</p>
+      </div>
+      
+      <p class="message-text">
+        The funds have been transferred to your registered account. Please allow 1-3 business days for the transaction to reflect in your account.
+      </p>
+      
+      <p class="message-text">
+        If you have any questions or concerns regarding this withdrawal, please don't hesitate to contact our support team on Discord.
+      </p>
+      
+      <p class="message-text">
+        Thank you for being part of Globby Funded Traders. Keep up the excellent work!
+      </p>
+      
+      <div class="signature">
+        <p>Best regards,</p>
+        <p><strong>Globby Funded Traders Team</strong></p>
+      </div>
+    </div>
+    <div class="footer">
+      <p>© 2025 Globby Funded Traders. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html>
+`;
+
 export const generateEmailTemplate = (data: SendEmailRequest): string => {
   switch (data.emailType) {
     case "account_suspended":
@@ -399,6 +459,8 @@ export const generateEmailTemplate = (data: SendEmailRequest): string => {
       );
     case "challenge_passed":
       return challengePassedTemplate(data.email || "");
+    case "withdrawal":
+      return withdrawalTemplate(data.usd || "", data.ngn || "");
     default:
       return "";
   }

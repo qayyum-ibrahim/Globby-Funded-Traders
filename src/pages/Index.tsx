@@ -1,6 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import RequirementsSection from "@/components/RequirementsSection";
 import ProcessSection from "@/components/ProcessSection";
+import TradingAssetsSection from "@/components/TradingAssestsSection";
 import TradingRulesSection from "@/components/TradingRulesSection";
 import WithdrawalSection from "@/components/WithdrawalSection";
 import SummarySection from "@/components/SummarySection";
@@ -12,6 +13,7 @@ const Index = () => {
       <HeroSection />
       <RequirementsSection />
       <ProcessSection />
+      <TradingAssetsSection />
       <TradingRulesSection />
       <WithdrawalSection />
       <SummarySection />
