@@ -417,7 +417,7 @@ const withdrawalTemplate = (usd: string, ngn: string) => `
       </div>
       
       <p class="message-text">
-        The funds have been transferred to your registered account. Please allow 1-3 business days for the transaction to reflect in your account.
+        The funds have been transferred to your registered account. Please allow 24 hours for the transaction to reflect in your account.
       </p>
       
       <p class="message-text">
