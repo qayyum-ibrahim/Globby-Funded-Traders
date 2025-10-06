@@ -421,7 +421,7 @@ const withdrawalTemplate = (usd: string, ngn: string) => `
       </p>
       
       <p class="message-text">
-        If you have any questions or concerns regarding this withdrawal, please don't hesitate to contact our support team on Discord.
+        If you have any questions or concerns regarding this withdrawal, please don't hesitate to contact our <a href="https://discord.gg/v9ZPtkZ2pt">support team on Discord</a>.
       </p>
       
       <p class="message-text">
