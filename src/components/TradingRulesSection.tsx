@@ -21,6 +21,7 @@ const TradingRulesSection = () => {
         "Max Drawdown: 30% of Initial Account Balance",
         "Daily Limit: 15% of Initial Account Balance",
         "Respect all Position Sizing Rules",
+        "5 Minimum Trading Days: This is mandatory to properly examine traders performance from a consistency and risk management approach.",
         "No Hedging",
       ],
       color: "text-primary",
